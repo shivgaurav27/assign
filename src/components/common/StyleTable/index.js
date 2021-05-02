@@ -12,9 +12,10 @@ const useStyles = makeStyles({
   },
 });
 
-function StyleTable() {
+function StyleTable(props) {
   const classes = useStyles();
-
+  const { Data } = props;
+  console.log("data", Data);
   return (
     <div className="table-responsive">
       <table className="table table-bordered">
@@ -32,50 +33,54 @@ function StyleTable() {
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>IFFcO CHOWK(5:20AM) Dwarka(7:20AM)</td>
-            <td>ANDREW JOHN</td>
-            <td>
-              <div>Rs.0</div>
-            </td>
-            <td>65.0 Km</td>
-            <td>0.00 Km </td>
-            <td>02 hrs 00 min</td>
-            <td>1020 10285</td>
-            <td>
-              <div className="d-flex justify-content-between tableBlock">
-                <div>
-                  <Button
-                    color="secondary"
-                    variant="contained"
-                    size="small"
-                    classes={{
-                      root: classes.buttonStyle,
-                      label: classes.buttonLabel,
-                      text: classes.buttonText,
-                    }}
-                  >
-                    Movement Report
-                  </Button>
-                </div>
-                <div>
-                  <Button
-                    color="secondary"
-                    variant="contained"
-                    size="small"
-                    classes={{
-                      root: classes.buttonStyle,
-                      label: classes.buttonLabel,
-                      text: classes.buttonText,
-                    }}
-                  >
-                    Stoppage Report
-                  </Button>
-                </div>
-              </div>
-            </td>
-          </tr>
+          {Data &&
+            Data?.length > 0 &&
+            Data.map((item) => (
+              <tr>
+                <th scope="row">1</th>
+                <td>{item?.tripStartEnd}</td>
+                <td>{item?.driverName}</td>
+                <td>
+                  <div>Rs.{item?.tripExpense}</div>
+                </td>
+                <td>{item?.tripKm} Km</td>
+                <td>{item?.tripGPSKm} </td>
+                <td>{item?.tripTime}</td>
+                <td>{item?.odometerReading}</td>
+                <td>
+                  <div className="d-flex justify-content-between tableBlock">
+                    <div>
+                      <Button
+                        color="secondary"
+                        variant="contained"
+                        size="small"
+                        classes={{
+                          root: classes.buttonStyle,
+                          label: classes.buttonLabel,
+                          text: classes.buttonText,
+                        }}
+                      >
+                        Movement Report
+                      </Button>
+                    </div>
+                    <div>
+                      <Button
+                        color="secondary"
+                        variant="contained"
+                        size="small"
+                        classes={{
+                          root: classes.buttonStyle,
+                          label: classes.buttonLabel,
+                          text: classes.buttonText,
+                        }}
+                      >
+                        Stoppage Report
+                      </Button>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+            ))}
         </tbody>
       </table>
     </div>
