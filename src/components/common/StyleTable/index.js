@@ -5,6 +5,7 @@ import "./StylesTable.css";
 const useStyles = makeStyles({
   buttonStyle: {
     borderRadius: "5px",
+    marginTop: "7px",
   },
   buttonLabel: {
     color: "#fff",
@@ -43,7 +44,7 @@ function StyleTable() {
             <td>02 hrs 00 min</td>
             <td>1020 10285</td>
             <td>
-              <div className="d-flex justify-content-between">
+              <div className="d-flex justify-content-between tableBlock">
                 <div>
                   <Button
                     color="secondary"
