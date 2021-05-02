@@ -39,8 +39,9 @@ const useStyles = makeStyles((theme) => ({
   },
   buttonStyle: {
     backgroundColor: "#fff",
+    borderRadius: "5px",
     "&:hover": {
-      backgroundColor: "#fff",
+      backgroundColor: "#ebe9e6",
     },
   },
   buttonLabel: {
@@ -48,6 +49,9 @@ const useStyles = makeStyles((theme) => ({
   },
   typographyStyles: {
     lineHeight: 0,
+  },
+  buttonText: {
+    padding: 0,
   },
 }));
 
@@ -126,11 +130,12 @@ export default function Header() {
           <div className={classes.sectionMobile}>
             <Button
               color="inherit"
+              variant="contained"
               classes={{
                 root: classes.buttonStyle,
                 label: classes.buttonLabel,
+                text: classes.buttonText,
               }}
-              outlined="outlined"
             >
               <PowerSettingsNewIcon />
               Logout
