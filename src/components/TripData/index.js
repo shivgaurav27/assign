@@ -23,14 +23,20 @@ function TripData() {
       odometerReading: "1020-10286",
     },
   ];
+  const subHeading1 = () => ({
+    Date: "04/19/2020 at 5:20AM -04/19/2020 at 10:20AM (5 Hrs 0 Minutes)",
+    totalKM: 165,
+    totalExpenses: 0,
+  });
+
   return (
     <div>
       <div className="px-4">
-        <SubHeader />
+        <SubHeader subHeading1={subHeading1()} />
         <StyleTable Data={Data} />
-        <SubHeader />
+        <SubHeader subHeading1={subHeading1()} />
         <StyleTable Data={Data} />
-        <SubHeader />
+        <SubHeader subHeading1={subHeading1()} />
         <StyleTable Data={Data} />
       </div>
     </div>

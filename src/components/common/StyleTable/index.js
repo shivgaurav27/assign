@@ -15,7 +15,7 @@ const useStyles = makeStyles({
 function StyleTable(props) {
   const classes = useStyles();
   const { Data } = props;
-  console.log("data", Data);
+
   return (
     <div className="table-responsive">
       <table className="table table-bordered">

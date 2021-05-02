@@ -16,6 +16,7 @@ const metricStyles = makeStyles({
 });
 
 function SubHeader(props) {
+  const { subHeading1 } = props;
   const classes = metricStyles();
   return (
     <>
@@ -23,16 +24,14 @@ function SubHeader(props) {
         <Toolbar
           classes={{ regular: classes.regularstyle, root: classes.rootStyle }}
         >
-          <Typography variant="h5">
-            Date: 04/19/2020 at 5:20AM -04/19/2020 at 10:20AM (5 Hrs 0 Minutes)
-          </Typography>
+          <Typography variant="h5"> Date: {subHeading1?.Date}</Typography>
           <div className="d-flex justify-content-between">
             <Typography variant="h5" style={{ color: "#0be0d9" }}>
-              Total KM :165 KM &nbsp;
+              Total KM : {subHeading1?.totalKM} &nbsp;
             </Typography>
             <Typography variant="h5" style={{ color: "#c5e305" }}>
               {" "}
-              Total Expenses : 0
+              Total Expenses : {subHeading1?.totalExpenses}
             </Typography>
           </div>
         </Toolbar>
