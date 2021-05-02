@@ -25,7 +25,7 @@ function TripData() {
   ];
   return (
     <div>
-      <div className="p-4">
+      <div className="px-4">
         <SubHeader />
         <StyleTable Data={Data} />
         <SubHeader />
