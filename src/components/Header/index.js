@@ -18,8 +18,10 @@ const useStyles = makeStyles((theme) => ({
   },
   title: {
     display: "block",
+    lineHeight: 1,
     [theme.breakpoints.up("sm")]: {
       display: "block",
+      lineHeight: 1,
     },
   },
 
@@ -36,11 +38,16 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   buttonStyle: {
-    border: "1px solid black",
     backgroundColor: "#fff",
+    "&:hover": {
+      backgroundColor: "#fff",
+    },
   },
   buttonLabel: {
     color: "#000",
+  },
+  typographyStyles: {
+    lineHeight: 0,
   },
 }));
 
@@ -99,7 +106,8 @@ export default function Header() {
             <MenuIcon />
           </IconButton>
           <Typography className={classes.title} variant="h6" noWrap>
-            Material-UI
+            watsoo <br />
+            xpress
           </Typography>
 
           <div className={classes.grow} />
@@ -122,6 +130,7 @@ export default function Header() {
                 root: classes.buttonStyle,
                 label: classes.buttonLabel,
               }}
+              outlined="outlined"
             >
               <PowerSettingsNewIcon />
               Logout
