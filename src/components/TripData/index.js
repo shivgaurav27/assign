@@ -4,7 +4,7 @@ import SubHeader from "../SubHeader";
 function TripData() {
   return (
     <div>
-      <div className="container">
+      <div className="p-4">
         <SubHeader />
       </div>
     </div>
